@@ -14,3 +14,8 @@ It also has the request body where the `get` request is handled, the `parse` the
 
 #### `app.js` module. 
 This includes the `movie.js` import which calls the request body.
+
+ ### How it works. 
+ 
+ 1. Open the file path for the app in your prefered text editor or teminal.
+ 2. In your Terminal type `node app.js` + ` city name`
