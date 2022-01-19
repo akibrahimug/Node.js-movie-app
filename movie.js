@@ -14,13 +14,21 @@ const get = (search) => {
                 body += data.toString();
             })
 
-            res.on('end', () => {
-                const profile = JSON.parse(body)
-                printMessage(profile.name, profile.summary.replace(/<\/?[^>]+>/gi, ''))
-            })
+            try{
+                res.on('end', () => {
+                    const profile = JSON.parse(body)
+                    printMessage(profile.name, profile.summary.replace(/<\/?[^>]+>/gi, ''))
+                })
+            }catch(e){
+                console.log(e)
+            }
+            
         }else{
             console.error();
         }
+    })
+    request.on('error', e => {
+        console.error(e)
     })
 }
 
